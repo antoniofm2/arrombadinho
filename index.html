@@ -74,13 +74,13 @@
             let botaoWidth = botaoNao.clientWidth;
             let botaoHeight = botaoNao.clientHeight;
             
-            // Limites máximos para X e Y para garantir que o botão não ultrapasse a tela
-            let maxX = window.innerWidth - botaoWidth - 20;
-            let maxY = window.innerHeight - botaoHeight - 20;
+            // Limites máximos para X e Y, ajustados para reduzir a área de movimento
+            let maxX = window.innerWidth * 0.7 - botaoWidth;  // 70% da largura da tela
+            let maxY = window.innerHeight * 0.7 - botaoHeight; // 70% da altura da tela
 
-            // Garante que o botão fique dentro da tela
-            let x = Math.max(10, Math.random() * maxX); // Garante que o botão não vá para a esquerda ou acima
-            let y = Math.max(10, Math.random() * maxY); // Garante que o botão não vá para a parte superior
+            // Garante que o botão fique dentro da tela com margens maiores
+            let x = Math.max(30, Math.random() * maxX); // 30px de margem
+            let y = Math.max(30, Math.random() * maxY); // 30px de margem
             
             // Atualiza a posição do botão
             botaoNao.style.left = `${x}px`;
